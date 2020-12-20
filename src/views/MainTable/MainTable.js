@@ -9,7 +9,7 @@ import {
 import { getRefsatker } from '../../actions/filter';
 import { mapRefsatkerToOption } from '../../helpers/utils';
 import Tables from './tables';
-import ModalProfile from './ModalProfile';
+import ModalProfile from './modal-satker/ModalProfile';
 import { getUserData } from '../../helpers/user';
 
 class MainTable extends Component {
@@ -20,7 +20,7 @@ class MainTable extends Component {
       loading: true,
       modal: {
         display: false,
-        message: ''
+        row: {}
       },
       filter: 'persatker',
       filters: [
@@ -48,11 +48,11 @@ class MainTable extends Component {
     }
   }
 
-  showModal = (display, message) => {
+  showModal = (display, row) => {
     this.setState({
       modal: {
         display,
-        message
+        row
       }
     })
   }
@@ -96,7 +96,7 @@ class MainTable extends Component {
               modal={this.showModal}
             />
           </Segment>
-          <ModalProfile open={this.state.modal.display} onClose={this.showModal} />
+          <ModalProfile open={this.state.modal.display} onClose={this.showModal} row={this.state.modal.row}/>
         </Segment.Group>
       </Segment>
     )

@@ -9,6 +9,7 @@ import {
   Segment
 } from 'semantic-ui-react';
 import { Formik } from 'formik';
+import {postUpload} from '../actions/upload';
 
 class Upload extends Component {
   constructor(props) {
@@ -49,7 +50,9 @@ class Upload extends Component {
                 return errors;
               }}
               onSubmit={(values, { setSubmiting }) => {
-                //
+                postUpload(values).then(res => {
+                  console.log('lll')
+                })
               }}
             >
               {({

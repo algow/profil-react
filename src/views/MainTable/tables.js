@@ -100,7 +100,7 @@ class Tables extends Component {
                     <Table.Cell textAlign='right'>{value.outs_kontrak.toLocaleString('en-US')}</Table.Cell>
                     <Table.Cell textAlign='right'>{value.realisasi.toLocaleString('en-US')}</Table.Cell>
                     <Table.Cell textAlign='right'>
-                      <Button icon color='green' size='mini' onClick={this.props.modal}>
+                      <Button icon color='green' size='mini' onClick={() => this.props.modal(true, value)}>
                         <Icon name='expand arrows alternate' />
                       </Button>
                     </Table.Cell>

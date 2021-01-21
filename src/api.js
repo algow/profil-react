@@ -1,4 +1,4 @@
-const BASE = 'http://10.108.64.56:5000/';
+const BASE = 'http://10.108.64.173:5000/';
 
 exports.user = BASE + 'user';
 exports.refsatker = BASE + 'refsatker?kanwil=';

@@ -8,7 +8,8 @@ import {
 } from 'semantic-ui-react';
 import { getRefsatker } from '../../actions/filter';
 import { mapRefsatkerToOption } from '../../helpers/utils';
-import Tables from './tables';
+// import Tables from './tables';
+import Wrapper from './wrapper';
 import ModalProfile from './modal-satker/ModalProfile';
 import { getUserData } from '../../helpers/user';
 
@@ -24,10 +25,19 @@ class MainTable extends Component {
       },
       filter: 'persatker',
       filters: [
-        {key: 'perakun', value: 'perakun', text: 'Per Akun'},
+        {key: 'perorganisasi', value: 'perorganisasi', text: 'Per BA'},
+        {key: 'perkewenangan', value: 'perkewenangan', text: 'Per Kewenangan'},
+        {key: 'perkabupaten', value: 'perkabupaten', text: 'Per Kabupaten/Kota'},
+        {key: 'perkppn', value: 'perkppn', text: 'Per KPPN'},
         {key: 'persatker', value: 'persatker', text: 'Per Satker'},
-        {key: 'perkabupaten', value: 'perkabupaten', text: 'Per Kabupaten'},
-        {key: 'perkppn', value: 'perkppn', text: 'Per KPPN'}
+        {key: 'perfungsi', value: 'perfungsi', text: 'Per Fungsi'},
+        {key: 'perprogram', value: 'perprogram', text: 'Per Program'},
+        {key: 'perkegiatan', value: 'perkegiatan', text: 'Per Kegiatan'},
+        {key: 'peroutput', value: 'peroutput', text: 'Per Output'},
+        {key: 'perjenisbelanja', value: 'perjenisbelanja', text: 'Per Jenis Belanja'},
+        // {key: 'perakun', value: 'perakun', text: 'Per Akun'},
+        {key: 'persumberdana', value: 'persumberdana', text: 'Per Sumber Dana'},
+        {key: 'perkatoutput', value: 'perkatoutput', text: 'Per Kategori Output'}
       ],
       subfilter: '',
       subfilters: []
@@ -88,7 +98,7 @@ class MainTable extends Component {
             </Button>
           </Segment>
           <Segment>
-            <Tables 
+            <Wrapper 
               loading={this.state.loading} 
               filter={this.state.filter} 
               subfilter={this.state.subfilter} 

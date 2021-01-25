@@ -23,13 +23,13 @@ class Pagurealisasi extends Component {
   componentDidMount() {
     this.setState({colors: randomHexColor(20)});
     
-    getChartJenisbelajaPerkppn(getUserData()['kode_kanwil'], this.props.row.kode_satker).then(res => {
+    getChartJenisbelajaPerkppn(getUserData()['kode_kanwil'], this.props.row.kdsatker).then(res => {
       this.setState({ label: res.label, data: res.data });
     });
   }
 
   render(){
-    const persentase = (this.props.row.realisasi / this.props.row.dipa) * 100;
+    const persentase = (this.props.row.realisasi / this.props.row.pagu) * 100;
 
     const data = {
       labels: this.state.label,

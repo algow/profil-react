@@ -47,7 +47,7 @@ class JenisBelanja extends Component {
                 <Table.Cell textAlign='right'>{value.pagu.toLocaleString('en-US')}</Table.Cell>
                 <Table.Cell textAlign='right'>{value.blokir.toLocaleString('en-US')}</Table.Cell>
                 <Table.Cell textAlign='right'>{value.realisasi.toLocaleString('en-US')}</Table.Cell>
-                <Table.Cell textAlign='right'></Table.Cell>
+                <Table.Cell textAlign='right'>{value.persentase}</Table.Cell>
               </Table.Row>
             ))
           }
